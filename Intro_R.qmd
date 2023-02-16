@@ -1,0 +1,35 @@
+---
+title: "Introducción a R"
+author: "Anderson Sánchez"
+format: html
+editor: visual
+---
+
+# Operaciones básicas
+
+Las operacioes de matemáticas, lógica y de asignación.
+
+$$
+\hat{x} = \frac{\Sigma_{i=1}^{n}{x_i}}{n}
+$$
+
+# Vectores
+
+```{r Vector}
+x = c(1:100)
+xi = sum(x)/length(x)
+xi
+```
+
+## Vectores con datos ausentes
+
+```{r Vector datos ausentes}
+xv = c(1:10, NaN, 10:-20, NaN, 27)
+xv
+xi = sum(xv, na.rm = TRUE)/length(xv)
+xi
+```
+
+-   .rm es para que remueva los datos ausentes
+
+-   Cuando se coloca " na.rm = True" entonces se quitan los datos ausentes en el cáculo
