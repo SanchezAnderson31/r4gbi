@@ -23,13 +23,30 @@ xi
 
 ## Vectores con datos ausentes
 
-```{r Vector datos ausentes}
+```{r Vector_datos_ausente}
 xv = c(1:10, NaN, 10:-20, NaN, 27)
 xv
 xi = sum(xv, na.rm = TRUE)/length(xv)
 xi
 ```
 
--   .rm es para que remueva los datos ausentes
+-   a.rm es para que remueva los datos ausentes
 
 -   Cuando se coloca " na.rm = True" entonces se quitan los datos ausentes en el cáculo
+
+## Manipulación de Datos
+
+-   Para la manipulación de datos se ocupará la librería `tidyverse`
+
+```{r tidy}
+ library(tidyverse); library(ggplot2)
+data("diamonds")
+plot(pressure)
+df = diamonds %>% ggplot(aes(x= depth, y= pric, color=cut)) + 
+  geom_point(size=0.2) + facet_wrap(cut ~.)
+df
+```
+
+-   el echo= True elimina el bloque de codigo
+-   %\>% concatenador
+-   aes... es como crear un documendo en blanco que van a tener los ejes x e y
